@@ -1,0 +1,24 @@
+{
+  "name": "json2define",
+  "version": "0.0.0",
+  "description": "json to #define",
+  "author": "Paul Vollmer",
+  "license": "MIT",
+  "keywords": [
+    "json",
+    "#define",
+    "c",
+    "c++"
+  ],
+  "main": "bin/json2define",
+  "bin": {
+    "json2define": "bin/json2define"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "wng@srclab.org:json2define.git"
+  }
+}
