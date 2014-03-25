@@ -20,5 +20,8 @@
   "repository": {
     "type": "git",
     "url": "http://srclab.org/json2define.git"
+  },
+  "dependencies": {
+    "commander": "2.1.0"
   }
 }

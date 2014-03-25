@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+// json2define
+// bin/json2define
+
+
+/**
+ * Module dependencies.
+ */
+var program = require('commander');
+var pkg = require('../package.json');
+var json2define = require('../lib');
+var j2d = new json2define();
+
+
+program
+  .version(pkg.version)
+  .option('-i, --input [json]',     'The json file we ant to process')
+  .option('-r, --root [name]',      'A string we want to start at each define')
+  .option('-u, --uppercase [bool]', 'Set the #define name to uppercase, default: true', true)
+  .parse(process.argv);
+
+
+if (program.input === undefined) {
+  console.log('missing argument. we need an input file.');
+} else {
+  j2d.readFileSync(program.input);
+  if (program.root) j2d.setRoot(program.root);
+  if (program.uppercase) j2d.uppercase = program.uppercase;
+  var gen = j2d.generate();
+  console.log(gen);
+}
