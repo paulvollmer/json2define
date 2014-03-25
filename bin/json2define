@@ -26,7 +26,7 @@ if (program.input === undefined) {
 } else {
   j2d.readFileSync(program.input);
   if (program.root) j2d.setRoot(program.root);
-  if (program.uppercase) j2d.uppercase = program.uppercase;
+  if (program.uppercase) j2d.setUppercase(program.uppercase);
   var gen = j2d.generate();
   console.log(gen);
 }
