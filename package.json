@@ -1,6 +1,6 @@
 {
   "name": "json2define",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "json to #define",
   "author": "Paul Vollmer",
   "license": "MIT",
