@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
-// json2define
-// bin/json2define
+// json2define - bin/json2define
 
 
 /**
@@ -16,7 +15,7 @@ var j2d = new json2define();
 
 program
   .version(pkg.version)
-  .option('-i, --input [json]',     'The json file we ant to process')
+  .option('-i, --input [json]',     'The json file we want to process')
   .option('-r, --root [name]',      'A string we want to start at each define')
   .option('-u, --uppercase [bool]', 'Set the #define name to uppercase, default: true', true)
   .parse(process.argv);
@@ -28,7 +27,7 @@ if (program.input === undefined) {
   var jsonfile = fs.readFileSync(program.input, 'utf-8');
   j2d.setData(JSON.parse(jsonfile));
   if (program.root) j2d.setRoot(program.root);
-  if (program.uppercase) j2d.setUppercase(program.uppercase);
-  var gen = j2d.generate();
-  console.log(gen);
+  j2d.setUppercase(program.uppercase);
+  var generatedCode = j2d.generate();
+  console.log(generatedCode);
 }
