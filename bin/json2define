@@ -24,8 +24,14 @@ program
 if (program.input === undefined) {
   console.log('missing argument. we need an input file.');
 } else {
-  var jsonfile = fs.readFileSync(program.input, 'utf-8');
-  j2d.setData(JSON.parse(jsonfile));
+  var jsonfile;
+  try {
+    jsonfile = fs.readFileSync(program.input, 'utf-8');
+  } catch(e) {
+    console.error('"'+program.input+'" file not found.');
+    process.exit(1);
+  }
+  j2d.setJSON(jsonfile);
   if (program.root) j2d.setRoot(program.root);
   j2d.setUppercase(program.uppercase);
   var generatedCode = j2d.generate();
