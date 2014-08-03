@@ -25,6 +25,6 @@
     "commander": "2.3.0"
   },
   "devDependencies": {
-    "mocha": "*"
+    "mocha": "1.21.3"
   }
 }
