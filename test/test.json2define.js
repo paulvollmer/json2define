@@ -35,12 +35,30 @@ describe('bin/json2define', function() {
 
   describe('input', function() {
     it('test --input option', function(done) {
-      exec(json2defineCmd+'--input test/samples/sample.json', function (error, stdout, stderr) {
+      exec(json2defineCmd+'--input test/data/sample.json', function (error, stdout, stderr) {
         if (error) {
           assert.ok(false);
         } else {
           assert.ok(true);
         }
+        done();
+      });
+    });
+
+    it('test --input option with broken json', function(done) {
+      exec(json2defineCmd+'--input test/data/broken.json', function (error, stdout, stderr) {
+        if (error) {
+          assert.ok(false);
+        } else {
+          assert.ok(true);
+        }
+        done();
+      });
+    });
+
+    it('test --input option with broken filepath', function(done) {
+      exec(json2defineCmd+'--input broken/filepath.json', function (error, stdout, stderr) {
+        assert.deepEqual(error.code, 1);
         done();
       });
     });
