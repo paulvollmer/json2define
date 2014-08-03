@@ -8,6 +8,10 @@ This can be useful if you want to include some json data into a c or c++ applica
 
 ## Installation
 
+Install over npm:
+
+    npm install git://github.com/WrongEntertainment/json2define.git#v0.0.3
+
 
 ## Usage
 
