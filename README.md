@@ -25,16 +25,6 @@ Clone the repository and install the dependencies by running:
     npm install
 
 
-## Roadmap
-
-- if a "-" is used at a json item, replace it with "_"
-- arrays names not set to define names
-- opensource it to github
-- create gh-page
-- web frontend
-- release to npm
-
-
 ## License
 
 Copyright (c) 2014 Paul Vollmer. See the LICENSE file for license rights and limitations (MIT).
