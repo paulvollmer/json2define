@@ -32,6 +32,11 @@ describe('lib/index.js', function() {
       var j2d = new json2define();
       assert.equal('#define STRING "string"', j2d.getDefineCode('string', 'string'));
     });
+
+    it('key with "-" set to "_"', function() {
+      var j2d = new json2define();
+      assert.equal('#define FOO_BAR "string"', j2d.getDefineCode('foo-bar', 'string'));
+    });
   });
 
   describe('parseObject()', function() {
