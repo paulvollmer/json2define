@@ -1,5 +1,9 @@
 {
-  "key": "value",
+  "boolean": true,
+  "int": 1,
+  "float": 3.14,
+  "char": "c",
+  "string": "hello-world",
   "array": [0, 1, 2],
   "object": {
     "object-item-1": "object-value-1",
