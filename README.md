@@ -1,4 +1,4 @@
-# json2define
+# json2define [![Build Status](https://travis-ci.org/WrongEntertainment/json2define.svg?branch=master)](https://travis-ci.org/WrongEntertainment/json2define)
 
 This tool parse a json file and create for each item a `#define itemX "variableY"` code-line.  
 This can be useful if you want to include some json data into a c or c++ application.
