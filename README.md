@@ -17,7 +17,7 @@ Install over npm:
 
 To run the tool execute the following command:
 
-    node bin/json2define --input your.json
+    json2define --input "path/to/file.json"
 
 
 ## Development
