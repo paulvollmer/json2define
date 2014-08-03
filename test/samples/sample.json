@@ -1,0 +1,8 @@
+{
+  "key": "value",
+  "array": [0, 1, 2],
+  "object": {
+    "object-item-1": "object-value-1",
+    "object-item-2": "object-value-2"
+  }
+}
