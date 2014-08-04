@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 0.1.0
+- Replace define name "-" with "_"
+- Added check variable data type
+- Added html frontend
+
 ## Version 0.0.3
 - Added tests/travis-ci service
 - Added try/catch read json file
