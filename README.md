@@ -10,7 +10,7 @@ This can be useful if you want to include some json data into a c or c++ applica
 
 Install over npm:
 
-    npm install git://github.com/WrongEntertainment/json2define.git#v0.0.3
+    npm install git://github.com/WrongEntertainment/json2define.git#v0.1.0
 
 
 ## Usage
@@ -18,6 +18,11 @@ Install over npm:
 To run the tool execute the following command:
 
     json2define --input "path/to/file.json"
+
+
+## Frontend
+
+You can find a web-frontend at http://wrongentertainment.github.io/json2define
 
 
 ## Development
