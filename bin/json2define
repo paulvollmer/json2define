@@ -18,6 +18,10 @@ program
   .option('-i, --input [json]',     'The json file we want to process')
   .option('-r, --root [name]',      'A string we want to start at each define')
   .option('-u, --uppercase [bool]', 'Set the #define name to uppercase, default: true', true)
+  .on('--help', function() {
+    console.log('  Example:\n\n'+
+                '    json2define --input "path/to/file.json"');
+  })
   .parse(process.argv);
 
 

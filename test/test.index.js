@@ -12,10 +12,30 @@ describe('lib/index.js', function() {
     });
   });
 
-  describe('getDefineString()', function() {
-    it('should return the #define code', function() {
+  describe('getDefineCode()', function() {
+    it('should return the #define code boolean', function() {
       var j2d = new json2define();
-      assert.equal('#define TEST "123"', j2d.getDefineString('test', '123'));
+      assert.equal('#define BOOLEAN true', j2d.getDefineCode('boolean', true));
+    });
+
+    it('should return the #define code int/float', function() {
+      var j2d = new json2define();
+      assert.equal('#define INT 1', j2d.getDefineCode('int', 1));
+    });
+
+    it('should return the #define code char', function() {
+      var j2d = new json2define();
+      assert.equal('#define CHAR \'c\'', j2d.getDefineCode('char', 'c'));
+    });
+
+    it('should return the #define code string', function() {
+      var j2d = new json2define();
+      assert.equal('#define STRING "string"', j2d.getDefineCode('string', 'string'));
+    });
+
+    it('key with "-" set to "_"', function() {
+      var j2d = new json2define();
+      assert.equal('#define FOO_BAR "string"', j2d.getDefineCode('foo-bar', 'string'));
     });
   });
 
@@ -35,9 +55,9 @@ describe('lib/index.js', function() {
         testarray: [1, 2, 3]
       };
       var actual = j2d.parseObject(data);
-      var expected = '#define TESTARRAY_0 "1"\n'+
-                     '#define TESTARRAY_1 "2"\n'+
-                     '#define TESTARRAY_2 "3"\n';
+      var expected = '#define TESTARRAY_0 1\n'+
+                     '#define TESTARRAY_1 2\n'+
+                     '#define TESTARRAY_2 3\n';
       assert.equal(expected, actual);
     });
 
@@ -45,13 +65,13 @@ describe('lib/index.js', function() {
       var j2d = new json2define();
       var data = {
         testobject: {
-          obj1: '1',
-          obj2: '2',
+          obj1: 1,
+          obj2: 2,
         }
       };
       var actual = j2d.parseObject(data);
-      var expected = '#define TESTOBJECT_OBJ1 "1"\n'+
-                     '#define TESTOBJECT_OBJ2 "2"\n';
+      var expected = '#define TESTOBJECT_OBJ1 1\n'+
+                     '#define TESTOBJECT_OBJ2 2\n';
       assert.equal(expected, actual);
     });
   });
