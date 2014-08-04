@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta author="Paul Vollmer">
+  <title>json2define</title>
+  <style type="text/css">
+    body {
+      font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    }
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    #headline {
+      display: inline; 
+    }
+
+    #repl_source_wrap {
+      width: 50%;
+      float: left;
+    }
+    #repl_source {
+      width: 95%;
+      font-family: monospace;
+    }
+
+    #repl_results_wrap {
+      width: 50%;
+    }
+    #repl_results {
+      width: 100%;
+    }
+  </style>
+  <script type="text/javascript">
+    var module = {
+      exports: null
+    };
+    
+    window.onload = function() {
+      update();
+    };
+
+    function update() {
+      var settingRoot = document.getElementById('setting_root').value;
+      var settingUppercase = document.getElementById('setting_uppercase').checked;
+      var replSource = document.getElementById('repl_source').value;
+      
+      var j2d = new json2define();
+      j2d.setRoot(settingRoot);
+      j2d.setUppercase(settingUppercase);
+      j2d.setJSON(replSource);
+      
+      var replResults = document.getElementById('repl_results');
+      replResults.innerHTML = j2d.generate();
+    };
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div>
+      <h1 id="headline"><a href="http://github.com/WrongEntertainment/json2define">json2define</a></h1>
+      <img src="https://travis-ci.org/WrongEntertainment/json2define.svg?branch=master">
+      <hr>
+    </div>
+    <div id="settings">
+      Root: <input id="setting_root" type="text" name="input" value="MYROOT" onkeyup="update()">
+      Uppercase: <input id="setting_uppercase" type="checkbox" checked="true" onclick="update()">
+      <hr>
+    </div>
+    <div id="repl_source_wrap">
+      <textarea id="repl_source" rows="100" onkeyup="update()">{
+  "name": "json2define",
+  "boolean": true,
+  "int": 1,
+  "float": 3.14,
+  "char": "c",
+  "string": "hello-world",
+  "array": [0, 1, 2],
+  "object": {
+    "object-item-1": "object-value-1",
+    "object-item-2": "object-value-2"
+  }
+}</textarea>
+    </div>
+    <div id="repl_results_wrap">
+      <pre id="repl_results"></pre>
+    </div>
+  </div>
+  <script src="lib/index.js"></script>
+</body>
+</html>
