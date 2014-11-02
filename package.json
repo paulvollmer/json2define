@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/WrongEntertainment/json2define.git"
+    "url": "https://github.com/paulvollmer/json2define.git"
   },
   "dependencies": {
     "commander": "2.3.0"
